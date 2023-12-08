@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Fandomo</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="nav-header">
+            <p class="logo">Fandomo</p>
+            <i class='bx bx-menu btn-menu'></i>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <button id="index">
+                    <i class='bx bx-home-alt-2'></i>
+                    <span class="text">Home</span>
+                </button>
+            </li>
+            <li>
+                <button id="ropa">
+                    <i class='bx bx-closet' ></i>
+                    <span class="text">Ropa</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class='bx bx-library'></i>
+                    <span class="text">Mangas</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class='bx bxs-invader'></i>
+                    <span class="text">Posters</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class='bx bx-palette'></i>
+                    <span class="text">Posters</span>
+                </button>
+            </li>
+            <li>
+                <button id="btn-crear">
+                    <i class='bx bx-add-to-queue'></i>
+                    <span class="text">Agregar Producto</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <main class="container">
+
+        <div class="container-header">
+            <div class="title-logo">
+                <img src="" alt="">
+            </div>
+            
+            <div class="shopping-cart">
+                <div class="search">
+                    <i class='bx bx-search'></i>
+                    <input type="text" id="searchInput">
+                </div>
+                <div>
+                    <button id="shopping-cart"><img src="images/carrito-de-compras.png" alt=""></button>
+                </div>
+            </div>
+        </div>
+        <div id="carrito-container">
+            <h3>Carrito De Compras</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Productos-carrito">
+                        <!-- Las filas se agregarán dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </div>
+            <button id="continuar-compra">Continuar Comprar</button>
+            <button id="close-car">Cerrar</button>
+            <button id="limpiar-car">limpiar</button>
+            <button id="finalizar-compra">finalizar compra</button>
+        </div>
+        <div id="products-container">
+        </div>
+        <div id="modal">
+                <form action="" id="productoForm">
+                    <span id="btn-close">&times;</span>
+                    <h2>Crear Nuevo Producto</h2>
+                    <div class="content-form">
+
+                        <div class="container-img">
+                            <img src="images/logo.png" alt="" id="img-form">
+                            <input type="file" name="imgProducto" id="imgProducto" accept="image/*">
+                            <label for="imgProducto">Seleccione una Imagen</label>
+                        </div>
+
+                        <div class="container-inputs">
+                            <label for="nombreProd">Nombre Producto</label>
+                            <input type="text" id="nombreProd" placeholder="Nombre Producto">
+                
+                            <label for="catProd">Descripcion Producto</label>
+                            <input type="text" id="catProd" placeholder="categria Producto">
+                
+                
+                            <label for="cantProd">cantidad Producto</label>
+                            <input type="number" id="cantProd" placeholder="Precio Producto">
+                
+                            <label for="precioProd">Precio Producto</label>
+                            <input type="number" id="precioProd" placeholder="Precio Producto">
+                
+                            <label for="descriptionProd">Descripcion Producto</label>
+                            <textarea name="descriptionProd" id="descriptionProd" placeholder="ingrese la descripcion del producto"></textarea>
+                
+                            <input type="submit" value="Crear">
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </main>
+    
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/carrito.js"></script>
+
+</body>
+</html>
