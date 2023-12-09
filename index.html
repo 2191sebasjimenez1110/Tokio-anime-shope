@@ -9,67 +9,50 @@
     <title>Fandomo</title>
 </head>
 <body>
-    <div class="sidebar">
-        <div class="nav-header">
-            <p class="logo">Fandomo</p>
-            <i class='bx bx-menu btn-menu'></i>
+    <nav class="menu">
+        <div class="menu-container">
+            <img src="images/Logotipo Estudio de Tatuajes Atrevido y Limpio Blanco y Negro.png" alt="" class="logo">
+            <ul class="menu-option">
+                <li class="menu-item">
+                    <a href="#" class="menu-link">Inicio</a>
+                </li> 
+                <li class="menu-item menu-item-show">
+                    <a href="#" class="menu-link">Categoria</a>
+                    <ul class="menu-nesting">
+                        <li class="menu-inside">
+                            <a href="#" class="menu-link menu-link-inside" id="index">Todos</a>
+                        </li>
+                        <li class="menu-inside">
+                            <a href="#" class="menu-link menu-link-inside" id="ropa">Ropa</a>
+                        </li>
+                        <li class="menu-inside">
+                            <a href="#" class="menu-link menu-link-inside" id="figura">Figuras</a>
+                        </li>
+                        <li class="menu-inside">
+                            <a href="#" class="menu-link menu-link-inside" id="manga">Manga</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link" id="btn-crear">Crear Producto</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">Inventario</a>
+                </li>
+            </ul>
+            <div class="buscador">
+                <img src="images/lupa.png" alt="">
+                <input type="text" placeholder="busacar..." id="searchInput">
+            </div>
+            <div class="carrito">
+                <button id="shopping-cart">
+                    <img src="images/carrito-de-compras.png" alt="">
+                    <span id="count-cart">0</span>
+                </button>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li>
-                <button id="index">
-                    <i class='bx bx-home-alt-2'></i>
-                    <span class="text">Home</span>
-                </button>
-            </li>
-            <li>
-                <button id="ropa">
-                    <i class='bx bx-closet' ></i>
-                    <span class="text">Ropa</span>
-                </button>
-            </li>
-            <li>
-                <button>
-                    <i class='bx bx-library'></i>
-                    <span class="text">Mangas</span>
-                </button>
-            </li>
-            <li>
-                <button>
-                    <i class='bx bxs-invader'></i>
-                    <span class="text">Posters</span>
-                </button>
-            </li>
-            <li>
-                <button>
-                    <i class='bx bx-palette'></i>
-                    <span class="text">Posters</span>
-                </button>
-            </li>
-            <li>
-                <button id="btn-crear">
-                    <i class='bx bx-add-to-queue'></i>
-                    <span class="text">Agregar Producto</span>
-                </button>
-            </li>
-        </ul>
-    </div>
+    </nav>
     <main class="container">
-
-        <div class="container-header">
-            <div class="title-logo">
-                <img src="" alt="">
-            </div>
-            
-            <div class="shopping-cart">
-                <div class="search">
-                    <i class='bx bx-search'></i>
-                    <input type="text" id="searchInput">
-                </div>
-                <div>
-                    <button id="shopping-cart"><img src="images/carrito-de-compras.png" alt=""></button>
-                </div>
-            </div>
-        </div>
         <div id="carrito-container">
             <h3>Carrito De Compras</h3>
             <div class="table-container">
@@ -89,7 +72,6 @@
                     </tbody>
                 </table>
             </div>
-            <button id="continuar-compra">Continuar Comprar</button>
             <button id="close-car">Cerrar</button>
             <button id="limpiar-car">limpiar</button>
             <button id="finalizar-compra">finalizar compra</button>

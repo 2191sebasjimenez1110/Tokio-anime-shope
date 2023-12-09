@@ -2,6 +2,8 @@ import { Productos, mostrarTodosLosProductos, filtrarCategoria, agregarNuevoProd
 
 const form = document.getElementById("productoForm");
 const btnRopa = document.getElementById("ropa");
+const btnFigura = document.getElementById("figura");
+const btnManga = document.getElementById("manga");
 const btnIndex = document.getElementById("index");
 const productsContainer = document.getElementById("products-container");
 
@@ -32,31 +34,21 @@ form.addEventListener('submit', function (event) {
 });
 
 btnRopa.addEventListener("click", () => {
-    filtrarCategoria("busos");
+    filtrarCategoria("Ropa");
+});
+
+btnFigura.addEventListener("click", () => {
+    filtrarCategoria("Figuras");
+});
+
+btnManga.addEventListener("click", () => {
+    filtrarCategoria("Manga");
 });
 
 btnIndex.addEventListener("click", () => {
     productsContainer.innerHTML = "";
     mostrarTodosLosProductos();
 });
-
-
-const btnMenu = document.querySelector('.btn-menu'),
-sidebar = document.querySelector('.sidebar');
-
-btnMenu.addEventListener('click',() => {
-    sidebar.classList.toggle('expand');
-
-    changesBtn()
-})
-
-function changesBtn() {
-    if (sidebar.classList.contains('expand')) {
-        btnMenu.classList.replace('bx-menu','bx-menu-alt-right')
-    }else{
-        btnMenu.classList.replace('bx-menu-alt-right','bx-menu')
-    }
-}
 
 
 const file = document.getElementById('imgProducto');
@@ -92,6 +84,8 @@ file.addEventListener('change', e => {
         img.src = defaultFile;
     }
 });
+
+
 
 
 
