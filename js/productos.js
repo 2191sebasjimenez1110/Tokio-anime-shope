@@ -71,7 +71,6 @@ function Productos(){
 
 function mostrarTodosLosProductos() {
     for (let i = 0; i < localStorage.length; i++) {
-        localStorage.clear()
         const clave = localStorage.key(i);
         const valor = JSON.parse(localStorage.getItem(clave));
         generarTarjetas(valor);
