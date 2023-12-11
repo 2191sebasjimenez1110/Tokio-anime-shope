@@ -44,8 +44,9 @@ function agregarFilaAlCarrito(producto) {
         <td>${producto.nombre}</td>
         <td>${producto.descripcion}</td>
         <td>${producto.precio}</td>
-        <td class="cantidad" id="cart-cant">1<button id="sumar-cart">+</button><button id="restar ">-</button></td>
-        <td>${producto.cantidad * producto.precio}</td>
+        <td class="cantidad" id="cart-cant">1</td>
+        <td><button id="sumar-cart">+</button><button id="restar ">-</button></td>
+        <td>${producto.precio}</td>
     `;
 
     tbody.appendChild(fila);

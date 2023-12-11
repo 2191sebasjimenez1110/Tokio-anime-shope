@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Tokyo anime Shope</title>
+    <link rel="shortcut icon" href="images/favicon-16x16.png" type="image/x-icon">
+    <title>Tokyo Shope anime</title>
 </head>
 <body>
     <nav class="menu">
@@ -13,7 +14,7 @@
             <img src="images/Logotipo Estudio de Tatuajes Atrevido y Limpio Blanco y Negro.png" alt="" class="logo">
             <ul class="menu-option">
                 <li class="menu-item">
-                    <a href="#" class="menu-link">Inicio</a>
+                    <a href="index.html" class="menu-link">Inicio</a>
                 </li> 
                 <li class="menu-item menu-item-show">
                     <a href="#" class="menu-link">Categoria</a>
@@ -33,10 +34,18 @@
                     </ul>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link" id="btn-crear">Crear Producto</a>
+                    <a href="#" class="menu-link">Filtro</a>
+                    <ul class="menu-nesting">
+                        <li class="menu-inside">
+                            <a href="#" class="menu-link menu-link-inside" id="filtroMayorMenor">Precio Mayor a Menor</a>
+                        </li>
+                        <li class="menu-inside">
+                            <a href="#" class="menu-link menu-link-inside" id="filtroMenorMayor">Precio Menor a Mayor</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">Inventario</a>
+                    <a href="#" class="menu-link" id="btn-crear">Crear Producto</a>
                 </li>
             </ul>
             <div class="buscador">
@@ -53,7 +62,9 @@
     </nav>
     <main class="container">
         <div id="carrito-container">
-            <h3>Carrito De Compras</h3>
+            <div class="title-cart">
+                <h3>Carrito De Compras</h3><button id="close-car">&times;</button>
+            </div>
             <div class="table-container">
                 <table>
                     <thead>
@@ -63,17 +74,18 @@
                             <th>Descripción</th>
                             <th>Precio</th>
                             <th>Cantidad</th>
+                            <th class="button-cant"></th>
                             <th>Total</th>
                         </tr>
                     </thead>
                     <tbody id="Productos-carrito">
-                        <!-- Las filas se agregarán dinámicamente aquí -->
                     </tbody>
                 </table>
             </div>
-            <button id="close-car">Cerrar</button>
-            <button id="limpiar-car">limpiar</button>
-            <button id="finalizar-compra">finalizar compra</button>
+            <div class="button-cart">
+                <button id="limpiar-car">limpiar</button>
+                <button id="finalizar-compra">finalizar compra</button>
+            </div>
         </div>
         <div id="products-container">
         </div>
@@ -84,7 +96,7 @@
                     <div class="content-form">
 
                         <div class="container-img">
-                            <img src="images/logo.png" alt="" id="img-form">
+                            <img src="images/Logotipo Estudio de Tatuajes Atrevido y Limpio Blanco y Negro (1).png" alt="" id="img-form">
                             <input type="file" name="imgProducto" id="imgProducto" accept="image/*">
                             <label for="imgProducto">Seleccione una Imagen</label>
                         </div>

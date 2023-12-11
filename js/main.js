@@ -1,4 +1,4 @@
-import { Productos, mostrarTodosLosProductos, filtrarCategoria, agregarNuevoProducto } from './productos.js'
+import { Productos, mostrarTodosLosProductos, filtrarCategoria, agregarNuevoProducto, generarTarjetas } from './productos.js'
 
 const form = document.getElementById("productoForm");
 const btnRopa = document.getElementById("ropa");
@@ -84,6 +84,45 @@ file.addEventListener('change', e => {
         img.src = defaultFile;
     }
 });
+
+const btnFiltroMayorMenor = document.getElementById("filtroMayorMenor");
+const btnFiltroMenorMayor = document.getElementById("filtroMenorMayor");
+
+btnFiltroMayorMenor.addEventListener("click", () => {
+    filtrarPorPrecio("asc");
+});
+
+btnFiltroMenorMayor.addEventListener("click", () => {
+    filtrarPorPrecio("desc");
+});
+
+function filtrarPorPrecio(order) {
+    const productosArray = [];
+    console.log(productosArray);
+
+    for (let i = 0; i < localStorage.length; i++) {
+        const clave = localStorage.key(i);
+        const valor = JSON.parse(localStorage.getItem(clave));
+        productosArray.push(valor);
+    }
+
+    productosArray.sort((a, b) => {
+        return order === "desc" ? a.precio - b.precio : b.precio - a.precio;
+    });
+
+    mostrarProductosEnOrden(productosArray);
+}
+
+
+function mostrarProductosEnOrden(productosArray) {
+    productsContainer.innerHTML = "";
+
+    productosArray.forEach(valor => {
+        generarTarjetas(valor);
+    });
+
+    AcutalizarBtnAgregar();
+}
 
 
 
