@@ -124,6 +124,86 @@ function mostrarProductosEnOrden(productosArray) {
     AcutalizarBtnAgregar();
 }
 
+    const listElements = document.querySelectorAll('.menu-item--show');
+    const list = document.querySelector('.menu-option');
+    const menu = document.querySelector('.menu-hamburguer');
+    const imgMenu = document.getElementById('menu-img');
+    let isMenuOpen = false;
+
+    const addClick = ()=>{
+        listElements.forEach(element =>{
+            element.addEventListener('click', ()=>{
+
+                
+                let subMenu = element.children[1];
+                let height = 0;
+                element.classList.toggle('menu-item--active');
+
+
+                if(subMenu.clientHeight === 0){
+                    height = subMenu.scrollHeight;
+                }
+
+                subMenu.style.height = `${height}px`;
+
+            });
+        });
+    }
+
+    const deleteStyleHeight = ()=>{
+        listElements.forEach(element=>{
+
+            if(element.children[1].getAttribute('style')){
+                element.children[1].removeAttribute('style');
+                element.classList.remove('menu-item--active');
+            }
+
+        });
+    }
+
+    menu.addEventListener('click', () => {
+        if (isMenuOpen) {
+            // Si el menú está abierto, ciérralo
+            list.style.display = 'none';
+            imgMenu.src = 'images/menu.png'; // Reemplaza 'images/menu.png' con la URL de tu imagen de menú cerrado
+        } else {
+            // Si el menú está cerrado, ábrelo
+            list.style.display = 'grid';
+            imgMenu.src = 'images/hamburguesa.png';// Reemplaza 'images/hamburguesa.png' con la URL de tu imagen de menú abierto
+        }
+
+        // Cambia el estado del menú (abierto/cerrado)
+        isMenuOpen = !isMenuOpen;
+    });
+    
+    document.addEventListener('click', (event) => {
+        const isClickInsideMenu = menu.contains(event.target) || list.contains(event.target);
+    
+        if (!isClickInsideMenu) {
+            list.style.display = 'none';
+            imgMenu.src = 'images/menu.png'; 
+            isMenuOpen = false;
+        }
+    });
+
+    window.addEventListener('resize', ()=>{
+        if(window.innerWidth > 920){
+            deleteStyleHeight();
+            if(list.classList.contains('menu-option--show'))
+                list.classList.remove('menu-option--show');
+
+        }else{
+            addClick();
+        }
+    });
+
+    if(window.innerWidth <= 920){
+        addClick();
+    }
+
+    menu.addEventListener('click', ()=> list.classList.toggle('menu-option--show'));
+
+
 
 
 

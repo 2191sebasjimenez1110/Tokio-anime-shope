@@ -99,6 +99,7 @@ body{
     right: 2%;
 }
 
+
 #searchInput{
     background: none;
     border: none;
@@ -127,9 +128,26 @@ body{
     height: 35px;
 }
 
+/* menu hambuerguesa */
+
+.menu-hamburguer{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+    display: none;
+}
+
+#menu-img {
+    display: block;
+    width: 32px;
+}
+
+
 
 .container{
-    padding: 5% 1.5% 0;
+    padding: 60px 1.5% 0;
 }
 
 
@@ -164,6 +182,7 @@ body{
 .content-card {
     padding: 8px;
     width: 100%;
+    height: 250px;
     margin-top: -4px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -180,6 +199,7 @@ body{
 }
 
 .description-card {
+    margin-top: 13px;
     font-weight: 100;
     padding: 5px 0;
 }
@@ -232,10 +252,10 @@ body{
 
 #productoForm {
     position: relative;
-    margin: 5% auto;
+    margin: 80px auto;
     background: #e2e2e2;
     padding: 20px;
-    width: 50%;
+    width: 60%;
     border-radius: 5px;
 }
 
@@ -257,7 +277,7 @@ body{
 
 .container-img {
     text-align: center;
-    width: 30%;
+    width: 40%;
 }
 
 #img-form {
@@ -336,8 +356,8 @@ body{
     display: none;
     position: fixed;
     right: 0;
-    top: 9%;
-    width: 550px;
+    top: 60px;
+    width: 500px;
     height: 500px; 
     max-height: 600px;
     overflow: hidden;
@@ -347,7 +367,7 @@ body{
 }
 
 .table-container {
-    max-height: 420px;
+    max-height: 350px;
     overflow-y: auto; 
 }
 
@@ -413,12 +433,13 @@ body{
     left: 35%;
     bottom: 2%;
     height: 50px;
-    width: 31.5%;
     display: flex;
     justify-content: space-between;
 }
+
 #limpiar-car,#finalizar-compra{
     margin-top: 10px;
+    margin-left: 5px;
     height: 30px;
     padding: 6px;
     border-radius: 5%;
@@ -427,4 +448,159 @@ body{
     border: none;
 }
 
+@media (max-width: 920px) {
+    .menu-container{
+        justify-content: space-between;
+    }
 
+    .logo{
+        margin-right: 30%;
+        width: 150px;
+    }
+
+    .menu-hamburguer{
+        margin-left: 10px;
+        display: flex;
+    }
+
+    #shopping-cart{
+        margin-right: 10px;
+    }
+
+    .description-card{
+        font-size: 15px;
+    }
+
+    .menu-option{
+        display: none;
+        position: fixed;
+        max-width: 250px;
+        width: 100%;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        background: #0c0c0c;
+        overflow: auto;
+        grid-auto-rows: max-content;
+        z-index: 4;
+    }
+
+    .menu-option--show{
+        transform: unset;
+        width: 100%;
+    }
+
+    .menu-link{
+        padding: 25px 0;
+        padding: 30px;
+        height: auto;
+    }
+    .menu-item{
+        --clip: 0;
+        overflow: hidden;
+    }
+    
+    .menu-item--active{
+        --transform: rotate(0);
+    }
+
+    .menu-nesting{
+        display: grid;
+        position: unset;
+        width: 100%;
+        transform: translateY(0);
+        height: 0;
+        transition: height .3s;
+    }
+
+    .menu-link-inside{
+        width: 90%;
+        margin-left: auto;
+        padding-left: 10px;
+        border-left: 1px solid #fff;
+    }
+
+
+    #carrito-container{
+        width: 350px;
+    }
+
+    .title-cart h3{
+        margin-top: 1px;
+        font-size: 20px;
+    }
+
+    .table-container th{
+        font-size: 16px;
+    }
+
+    .product-card{
+        width: 30%;
+    }
+}
+
+@media (max-width: 760px){
+    
+    .product-card{
+        width: 30%;
+    }
+
+    .img-card{
+        height: 180px;
+    }
+
+    .title-card{
+        font-size: 15px;
+        margin-top: 0px;
+    }
+
+    .description-card{
+        height: 80px;
+        font-size: 14px;
+    }
+
+    .products-describe{
+        flex-wrap: wrap;
+        font-size: 13px;
+    }
+    .prace-card{
+        font-size: 14px;
+    }
+
+    #carrito-container{
+        width: 250px;
+    }
+    
+    #add-car{
+        width: 25px;
+        height: 25px;
+    }
+
+    #add-car i{
+        font-size: 19px;
+    }
+    .logo{
+        margin: 0;
+        width: 120px;
+    }
+}
+
+@media (max-width: 481px){
+
+    .logo-menu{
+        margin: 0 auto;
+        width: 150px;
+        height: 150px;
+        display: block;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .product-card{
+        width: 45%;
+    }
+
+
+}

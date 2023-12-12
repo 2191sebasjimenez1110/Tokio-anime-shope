@@ -4,7 +4,7 @@ const closeCar = document.getElementById("close-car");
 const carrito = document.getElementById("carrito-container");
 const limpiarCar = document.getElementById("limpiar-car");
 const finalizarCompra = document.getElementById('finalizar-compra');
-const productsContainer = document.getElementById("products-container");
+
 
 
 openCar.addEventListener("click", () => {
@@ -20,13 +20,6 @@ closeCar.addEventListener("click", () => {
 });
 
 finalizarCompra.addEventListener("click", () => {
-    mostrarTodosLosProductos();
-
-    carrito.classList.remove("tabla-cart");
-    carrito.setAttribute("id", "carrito-container");
-
-    finalizarCompra.style.display = 'none';
-    continuarCompra.style.display = 'block';
     carrito.style.display = 'none';
 });
 
@@ -42,7 +35,6 @@ function agregarFilaAlCarrito(producto) {
     fila.innerHTML = `
         <td><img src="${producto.img}" alt="" class="img-carrito"></td>
         <td>${producto.nombre}</td>
-        <td>${producto.descripcion}</td>
         <td>${producto.precio}</td>
         <td class="cantidad" id="cart-cant">1</td>
         <td><button id="sumar-cart">+</button><button id="restar ">-</button></td>
@@ -68,7 +60,13 @@ function incrementarContador() {
     contadorElemento.innerText = contadorActual;
 }
 
+document.addEventListener('click', (event) => {
+    const isClickInsideCarrito = carrito.contains(event.target) || openCar.contains(event.target);
 
+    if (!isClickInsideCarrito) {
+        carrito.style.display = 'none';
+    }
+});
 
 
 
