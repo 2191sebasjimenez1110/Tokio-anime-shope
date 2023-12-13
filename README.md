@@ -1,5 +1,5 @@
-# E-commers - FanDomo
-este proyecto es con el fin de una practica completa de la creacion de un carrito de compras con html, css y javasrcipt.
+# E-commers - Tokio anime Shope
+proyecto paractica manejo de dom, donde se ulizo el lenguaje JavaScript.
 
 ## Herramientas
 *VisualCode
