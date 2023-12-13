@@ -31,6 +31,8 @@ function filtrarPorTitulo() {
 form.addEventListener('submit', function (event) {
     event.preventDefault();
     agregarNuevoProducto(form);
+
+    window.location.reload();
 });
 
 btnRopa.addEventListener("click", () => {

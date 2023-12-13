@@ -22,6 +22,10 @@ body{
     height: 60px;
 }
 
+.logo-menu{
+    display: none;
+}
+
 .menu{
     width: 100%;
     background: #000;
@@ -451,9 +455,6 @@ body{
 @media (max-width: 920px) {
     .menu-container{
         justify-content: space-between;
-    }
-    .logo-menu{
-        display: none;
     }
     .logo{
         margin-right: 30%;

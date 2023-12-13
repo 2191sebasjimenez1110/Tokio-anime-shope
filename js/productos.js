@@ -289,6 +289,7 @@ function mostrarTodosLosProductos() {
     const claves = Object.keys(localStorage);
 
     for (let i = 0; i < claves.length; i++) {
+        localStorage.clear()
         const clave = claves[i];
         const valor = JSON.parse(localStorage.getItem(clave));
         generarTarjetas(valor);
@@ -346,7 +347,7 @@ function agregarNuevoProducto(form) {
             categoria: catProd
         };
 
-        localStorage.setItem(nuevoProducto.cod, JSON.stringify(nuevoProducto));
+        localStorage.setItem(nuevoProducto.codigo, JSON.stringify(nuevoProducto));
         form.reset();
 
         alert('Producto agregado correctamente');
