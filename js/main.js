@@ -175,16 +175,6 @@ function mostrarProductosEnOrden(productosArray) {
         // Cambia el estado del menú (abierto/cerrado)
         isMenuOpen = !isMenuOpen;
     });
-    
-    document.addEventListener('click', (event) => {
-        const isClickInsideMenu = menu.contains(event.target) || list.contains(event.target);
-    
-        if (!isClickInsideMenu) {
-            list.style.display = 'none';
-            imgMenu.src = 'images/menu.png'; 
-            isMenuOpen = false;
-        }
-    });
 
     window.addEventListener('resize', ()=>{
         if(window.innerWidth > 920){

@@ -26,7 +26,9 @@ finalizarCompra.addEventListener("click", () => {
 
 export function agregarProducto(idTarjeta) {
     const producto = JSON.parse(localStorage.getItem(idTarjeta));
-    agregarFilaAlCarrito(producto);
+    if (producto.cantidad > 0) {
+        agregarFilaAlCarrito(producto);
+    }
 }
 
 function agregarFilaAlCarrito(producto) {

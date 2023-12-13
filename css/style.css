@@ -452,7 +452,9 @@ body{
     .menu-container{
         justify-content: space-between;
     }
-
+    .logo-menu{
+        display: none;
+    }
     .logo{
         margin-right: 30%;
         width: 150px;
@@ -570,7 +572,7 @@ body{
     #carrito-container{
         width: 250px;
     }
-    
+
     #add-car{
         width: 25px;
         height: 25px;

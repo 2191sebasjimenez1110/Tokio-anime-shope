@@ -171,7 +171,7 @@ function Productos(){
             codigo: 19,
             img:"https://mangalianza.com/storage/img/books/5/5/6/1419/1419.webp",
             nombre: "My Hero Academia Tomo 36",
-            cantidad: 10,
+            cantidad: 0,
             descripcion: "Manga de My Hero Academi escrito por Hirokoshi Kohei",
             precio: 50000,
             categoria: "Manga"
@@ -234,7 +234,7 @@ function Productos(){
             codigo: 26,
             img:"https://mangalianza.com/storage/img/books/47/55/53/287/287.webp",
             nombre: "Black Clover Tomo 11",
-            cantidad: 7,
+            cantidad: 0,
             descripcion: "Manga de Black Clover escrito por Yuuki Tabata edicion 12",
             precio: 53000,
             categoria: "Manga"
@@ -371,7 +371,7 @@ function AcutalizarBtnAgregar(){
     btnAgregar.forEach(boton =>{
         boton.addEventListener('click',()=>{
             const idTrajeta = boton.getAttribute('data-id');
-            agregarProducto(idTrajeta);
+            agregarProducto(idTrajeta);    
         })
     })
 }
